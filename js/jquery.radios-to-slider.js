@@ -1,18 +1,11 @@
 /* 
  * radiosToSlider v0.2.0
  * jquery plugin to create a slider using a list of radio buttons
- * (c)2014 Rubén Torres - rubentdlh@gmail.com
+ * (c)2014 Rubï¿½n Torres - rubentdlh@gmail.com
  * Released under the MIT license
  */
 
 (function($) {
-
-
-	var KNOB_WIDTH=32;
-	var KNOB_MARGIN=28;
-	var LEVEL_MARGIN=KNOB_MARGIN+10;
-	var LABEL_WIDTH=44;
-	var LEVEL_WIDTH=22;
 
 	function RadiosToSlider(element, options){
 		this.bearer=element;
@@ -36,13 +29,9 @@
 			this.bearer.find('input[type=radio]').hide();
 			this.bearer.addClass("radios-to-slider");
 			this.bearer.addClass(this.options.size);
-			this.bearer.css('width', (this.numOptions*LEVEL_WIDTH) + (this.numOptions-1)*LEVEL_MARGIN + 'px');
-			var label=0;
+			this.bearer.addClass('num-options-' + this.numOptions);
 			this.bearer.find('label').each(function(){
-				var leftPos = KNOB_WIDTH/2 - (LABEL_WIDTH/2) + label*LEVEL_MARGIN + label*LEVEL_WIDTH;
 				$(this).addClass('slider-label');
-				$(this).css('left', leftPos + 'px');
-				label++;
 			});
 		},
 
@@ -53,12 +42,6 @@
 				var radioId=$(this).attr('id');
 				b.append("<ins class='slider-level' data-radio='" + radioId + "'></ins>");
 			});
-			var level=0;
-			this.bearer.find('.slider-level').each(function(){
-				var paddingLeft = parseInt(b.css('padding-left').replace('px', ''));
-				$(this).css('left', paddingLeft + (level*LEVEL_MARGIN) + (level*LEVEL_WIDTH) + 'px');
-				level++;
-			})
 		},
 
 		//Add slider bar to DOM
@@ -115,7 +98,6 @@
 				var radioId = $(this).attr('data-radio');
 				slider.bearer.find('#' + radioId).prop('checked', true);
 				slider.setSlider();
-
 			});
 
 			this.bearer.find('input[type=radio]').change(function(){
