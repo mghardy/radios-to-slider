@@ -3,7 +3,7 @@
     width: 100%;
     position:relative;
     background-color:#e0e0e0;
-	margin-bottom:80px;
+	margin-bottom:16px;
 	-webkit-box-sizing:content-box;
 	   -moz-box-sizing:content-box;
 	     -o-box-sizing:content-box;
@@ -33,10 +33,11 @@
 	background-color:#fff;
 	cursor:pointer;
 	display:inline-block;
+    position: relative;
 }
 
 .radios-to-slider .slider-level.slider-lower-level{
-	opacity:0.2;
+	opacity:0.5;
 }
 
 .radios-to-slider .slider-level,
@@ -148,6 +149,8 @@
 	position:absolute;
 	left:0;
 	top:0;
+    z-index: 0;
+    padding: 5px;
 }
 
 .slider-bar.transition-enabled{
@@ -182,8 +185,8 @@
 }
 
 .radios-to-slider.large .slider-knob{
-	width:42px;
-	height:42px;
+	width:32px;
+	height:32px;
 	-webkit-border-radius:21px;
 	-moz-border-radius:21px;
 	-o-border-radius:21px;

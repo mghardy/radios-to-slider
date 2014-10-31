@@ -57,26 +57,31 @@
 			var radio=0;
 			var slider=this;
             var width = 0;
-			this.bearer.find('input[type=radio]').each( function(){
-                var cssMarginLeft = $(slider.bearer.find('.slider-level')[radio]).css('margin-left');
+            var b = this.bearer
+			b.find('input[type=radio]').each( function(){
+                var cssMarginLeft = $(b.find('.slider-level')[radio]).css('margin-left');
                 var marginLeft = parseInt(cssMarginLeft.substring(0, cssMarginLeft.length - 2)); //trim 'px'
-                width = width + marginLeft + slider.bearer.find('.slider-level').width();
+                width = width + marginLeft + b.find('.slider-level').width();
 
-				if($(this).prop('checked')){
-					slider.bearer.find('.slider-bar').css('display', 'block');
-					slider.bearer.find('.slider-bar').width( width + 5 ); //5px padding
+				if($(this).prop('checked')) {
+                    b.find('.slider-bar').css('display', 'block');
+                    if (radio === b.find('input[type=radio]').length - 1) {
+                        b.find('.slider-bar').css('width', '100%'); //last item
+                    } else {
+                        b.find('.slider-bar').width(width);
+                    }
 					slider.currentLevel = radio;
 				}
 				radio++;
 			});
 			//Set style for lower levels
 			var label=0;
-			this.bearer.find('.slider-level').each(function(){
+			b.find('.slider-level').each(function(){
 				if(label < slider.currentLevel){
 					$(this).css('visibility', 'visible');
                     $(this).show();
 					$(this).addClass('slider-lower-level');
-				}else if(label == slider.currentLevel){
+				}else if(label == slider.currentLevel && b.find('input[type=radio]:checked').length){
 					$(this).css('visibility', 'hidden');
 				}else{
 					$(this).css('visibility', 'visible');
@@ -87,7 +92,7 @@
 			});
 			//Add bold style for selected label
 			var label=0;
-			this.bearer.find('.slider-label').each(function(){
+			b.find('.slider-label').each(function(){
 				label++;
 				if(label == slider.currentLevel){
 					$(this).addClass('slider-label-active');
