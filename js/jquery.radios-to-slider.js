@@ -33,6 +33,9 @@
 			this.bearer.find('label').each(function(){
 				$(this).addClass('slider-label');
 			});
+            if(this.options.animation){
+                this.bearer.find('.slider-bar').addClass('transition-enabled');
+            }
 		},
 
 		//Add level indicators to DOM
@@ -51,33 +54,36 @@
 
 		//set width of slider bar and current level
 		setSlider: function(){
-			var radio=1;
+			var radio=0;
 			var slider=this;
+            var width = 0;
 			this.bearer.find('input[type=radio]').each( function(){
-				var radioId=$(this).attr('id');
+                var cssMarginLeft = $(slider.bearer.find('.slider-level')[radio]).css('margin-left');
+                var marginLeft = parseInt(cssMarginLeft.substring(0, cssMarginLeft.length - 2)); //trim 'px'
+                width = width + marginLeft + slider.bearer.find('.slider-level').width();
+
 				if($(this).prop('checked')){
 					slider.bearer.find('.slider-bar').css('display', 'block');
-					slider.bearer.find('.slider-bar').width( (radio*KNOB_WIDTH) + (radio-1)*KNOB_MARGIN + 'px');
-					slider.currentLevel=radio;
-				}
-				if(slider.options.animation){
-					slider.bearer.find('.slider-bar').addClass('transition-enabled');
+					slider.bearer.find('.slider-bar').width( width + 5 ); //5px padding
+					slider.currentLevel = radio;
 				}
 				radio++;
 			});
 			//Set style for lower levels
 			var label=0;
 			this.bearer.find('.slider-level').each(function(){
-				label++;
 				if(label < slider.currentLevel){
-					$(this).show();
+					$(this).css('visibility', 'visible');
+                    $(this).show();
 					$(this).addClass('slider-lower-level');
 				}else if(label == slider.currentLevel){
-					$(this).hide();
+					$(this).css('visibility', 'hidden');
 				}else{
-					$(this).show();
+					$(this).css('visibility', 'visible');
+                    $(this).show();
 					$(this).removeClass('slider-lower-level');
 				}
+                label++;
 			});
 			//Add bold style for selected label
 			var label=0;

@@ -54,7 +54,6 @@
     margin-left: 5px !important;
 }
 
-
 .radios-to-slider.num-options-2 .slider-level, .radios-to-slider.medium.num-options-2 .slider-level {
   margin-left: calc(100% - 50px);
 }
@@ -83,6 +82,15 @@
   margin-left: calc(9.9999% - 12px);
 }
 
+
+.radios-to-slider.large .slider-level{
+	width:32px;
+	height:32px;
+	-webkit-border-radius:16px;
+	-moz-border-radius:16px;
+	-o-border-radius:16px;
+	border-radius:16px;
+}
 
 
 .radios-to-slider.large.num-options-2 .slider-level {
@@ -113,15 +121,6 @@
   margin-left: calc(9.9999% - 23px);
 }
 
-
-.radios-to-slider.large .slider-level{
-	width:32px;
-	height:32px;
-	-webkit-border-radius:16px;
-	-moz-border-radius:16px;
-	-o-border-radius:16px;
-	border-radius:16px;
-}
 
 /* Labels */
 .slider-label{
