@@ -54,31 +54,62 @@
     margin-left: 5px !important;
 }
 
+
 .radios-to-slider.num-options-2 .slider-level, .radios-to-slider.medium.num-options-2 .slider-level {
-  margin-left: calc(100% - 69px);
+  margin-left: calc(100% - 50px);
 }
 .radios-to-slider.num-options-3 .slider-level, .radios-to-slider.medium.num-options-3 .slider-level {
-  margin-left: calc(50% - 51px);
+  margin-left: calc(50% - 37px);
 }
 .radios-to-slider.num-options-4 .slider-level, .radios-to-slider.medium.num-options-4 .slider-level {
-  margin-left: calc(33.333333% - 45px);
+  margin-left: calc(33.333333% - 32px);
 }
 .radios-to-slider.num-options-5 .slider-level, .radios-to-slider.medium.num-options-5 .slider-level {
-  margin-left: calc(25% - 42px);
+  margin-left: calc(25% - 30px);
 }
 .radios-to-slider.num-options-6 .slider-level, .radios-to-slider.medium.num-options-6 .slider-level {
-  margin-left: calc(20% - 40px);
+  margin-left: calc(20% - 28px);
 }
 .radios-to-slider.num-options-7 .slider-level, .radios-to-slider.medium.num-options-7 .slider-level {
-  margin-left: calc(16.666666% - 39px);
+  margin-left: calc(16.666666% - 27px);
 }
 .radios-to-slider.num-options-8 .slider-level, .radios-to-slider.medium.num-options-8 .slider-level {
-  margin-left: calc(14.285% - 38px);
+  margin-left: calc(14.285% - 26px);
 }
 .radios-to-slider.num-options-9 .slider-level, .radios-to-slider.medium.num-options-9 .slider-level {
-  margin-left: calc(12.5% - 37px);
+  margin-left: calc(12.5% - 26px);
 }
 .radios-to-slider.num-options-10 .slider-level, .radios-to-slider.medium.num-options-10 .slider-level {
+  margin-left: calc(9.9999% - 12px);
+}
+
+
+
+.radios-to-slider.large.num-options-2 .slider-level {
+  margin-left: calc(100% - 69px);
+}
+.radios-to-slider.large.num-options-3 .slider-level {
+  margin-left: calc(50% - 51px);
+}
+.radios-to-slider.large.num-options-4 .slider-level {
+  margin-left: calc(33.333333% - 45px);
+}
+.radios-to-slider.large.num-options-5 .slider-level {
+  margin-left: calc(25% - 42px);
+}
+.radios-to-slider.large.num-options-6 .slider-level {
+  margin-left: calc(20% - 40px);
+}
+.radios-to-slider.large.num-options-7 .slider-level {
+  margin-left: calc(16.666666% - 39px);
+}
+.radios-to-slider.large.num-options-8 .slider-level {
+  margin-left: calc(14.285% - 38px);
+}
+.radios-to-slider.large.num-options-9 .slider-level {
+  margin-left: calc(12.5% - 37px);
+}
+.radios-to-slider.large.num-options-10 .slider-level {
   margin-left: calc(9.9999% - 23px);
 }
 
